@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder> {
 
     private MyListData[] listdata;
+    private RecyclerViewClickInterface recyclerViewClickInterface;
 
     // RecyclerView recyclerView;
-    public MyListAdapter(MyListData[] listdata) {
+    public MyListAdapter(MyListData[] listdata,RecyclerViewClickInterface recyclerViewClickInterface) {
+        this.recyclerViewClickInterface=recyclerViewClickInterface;
         this.listdata = listdata;
     }
 
@@ -45,6 +47,22 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.text);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    recyclerViewClickInterface.onItemClick(getAdapterPosition());
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    recyclerViewClickInterface.onLongItemClick(getAdapterPosition());
+                    return true;
+                }
+            });
         }
     }
 }
