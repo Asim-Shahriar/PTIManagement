@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUsFragment">
+    tools:context=".EServicesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -11,8 +11,8 @@
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:textColor="@android:color/background_dark"
-        android:text="@string/About_us" />
+        android:textSize="15sp"
+        android:textColor="@android:color/holo_blue_bright"
+        android:text="@string/Eservices" />
 
 </RelativeLayout>

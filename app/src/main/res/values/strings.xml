@@ -1,5 +1,66 @@
 <resources>
     <string name="app_name">PTIManagement</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="About_us">PTI: Primary Training Institute PTI for short.
+        One and a half year long DPED training is imparted in PTIs to enhance the professional skills of government primary school teachers and improve the quality of primary education.
+        At present, the total number of PTIs in the country is 67. There are 2 private PTIs in it.
+        Pirojpur PTI is a traditional organization for the development of professional skills and quality of teachers of government primary schools in Pirojpur district.
+        It was established in 1966.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Services">1) Diploma in Primary Education (DPEd)\n
+                            2) ICT in Primary Education\n
+                            3) Math Olympiad for Primary Education\n
+                            4) Need Based Sub Cluster Training\n
+                            5) Subject Based Training\n
+                            6) Digital Smart Classroom Training</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="Eservices">1) Online DPEd Training\n
+                             2) Online ICT Training\n
+                             3) Online Subject Based Training</string>
+
+    <string name="Attendance">October,2020: 99%\n
+                              September,2020: 98%\n
+                              August,2020: 97%\n
+                              July,2020: 97%\n
+                              June,2020: 96%\n
+                              May,2020: 95%</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="Result">DPED (2019-2020): 99% (Pass)\n
+                          DPED (2018-2019): 100% (Pass)\n
+                          DPED (2017-2018): 98% (Pass)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="Notification">1) New Notice: DPED 2019-2020 Final result has been published.\n
+                                2) DPED Online Class is running.\n
+                                3) Online ICT Training is running.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="officers">Officers</string>
+
+    <string name="Farid">1. Molla Farid Ahmed\n Superintendent,\n
+        PTI Pirojpur\n Phn: +88046162311\n Email: ptipiroj@gmail.com</string>
+
+    <string name="Shonkar">2. Shankor Kumar Roy\n
+        Assistant Superintendent,\n
+        PTI Pirojpur\n
+        Phn: +88046162311\n
+        Email: ptipiroj@gmail.com</string>
+    <string name="Humayun">3. Md. Humayun kabir\n
+        Instructor (General)\n PTI Pirojpur\n Phn: +88046162311\n Email: ptipiroj@gmail.com</string>
+    <string name="Raqibul">4.Shah Md.Raqibul Hasan\n
+        Instructor\n
+        PTI Pirojpur\n Phn: +88046162311\n Email: ptipiroj@gmail.com</string>
+    <string name="Tariqul">5. Md. Tariqul Islam\n
+        Instructor (General)\n
+        PTI Pirojpur\n
+        Phn: +88046162311\n Email: ptipiroj@gmail.com</string>
+
+    <string name="Baral">6. Arundhati Baral\n
+                         Instructor (General)\n
+                         PTI Pirojpur\n
+                         Phn: +88046162311\n
+                         Email: ptipiroj@gmail.com</string>
 </resources>

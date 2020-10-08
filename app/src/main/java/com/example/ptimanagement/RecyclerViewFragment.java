@@ -48,6 +48,30 @@ public class RecyclerViewFragment extends Fragment implements RecyclerViewClickI
            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new AboutUsFragment())
                    .addToBackStack(null).commit();
        }
+        if(position==1){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new ServicesFragment())
+                    .addToBackStack(null).commit();
+        }
+        if(position==2){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new EServicesFragment())
+                    .addToBackStack(null).commit();
+        }
+        if(position==3){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new ContactFragment())
+                    .addToBackStack(null).commit();
+        }
+        if(position==4){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new AttendanceFragment())
+                    .addToBackStack(null).commit();
+        }
+        if(position==5){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new ResultFragment())
+                    .addToBackStack(null).commit();
+        }
+        if(position==7){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new NotificationFragment())
+                    .addToBackStack(null).commit();
+        }
     }
 
     @Override
