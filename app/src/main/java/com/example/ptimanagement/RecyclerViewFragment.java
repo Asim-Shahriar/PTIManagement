@@ -31,6 +31,7 @@ public class RecyclerViewFragment extends Fragment implements RecyclerViewClickI
                 new MyListData("Notice Board"),
                 new MyListData("Notifications"),
                 new MyListData("Setting"),
+                new MyListData("Website"),
 
         };
 
@@ -70,6 +71,10 @@ public class RecyclerViewFragment extends Fragment implements RecyclerViewClickI
         }
         if(position==7){
             getFragmentManager().beginTransaction().replace(R.id.frameContainer,new NotificationFragment())
+                    .addToBackStack(null).commit();
+        }
+        if(position==9){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new WebsiteFragment())
                     .addToBackStack(null).commit();
         }
     }
