@@ -1,74 +1,57 @@
 package com.example.ptimanagement;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
+import androidx.appcompat.app.AppCompatActivity;
 
-
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    private DrawerLayout drawer;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        final EditText etName = (EditText) findViewById(R.id.etName);
+        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        Button btnRegister = (Button) findViewById(R.id.btnRegister);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user = etName.getText().toString();
+                String password = etPassword.getText().toString();
+                SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
 
-       /* if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
-                    new ProfileFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_profile);
-        }*/
+                String savedPassword = preferences.getString(password, "");
+                String savedUserName = preferences.getString(user, "");
 
-        RecyclerViewFragment recyclerViewFragment=new RecyclerViewFragment();
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frameContainer,recyclerViewFragment);
-        fragmentTransaction.commit();
-    }
-    @Override
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+                /*String userDetails = preferences.getString(user + password + "data","No information on that user.");
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("display",userDetails);
+                editor.commit();*/
+                if((user.equals(savedUserName)) && (password.equals(savedPassword))){
+                    Intent displayScreen = new Intent(MainActivity.this, NavigationDrawerActivity.class);
+                    startActivity(displayScreen);
+                }else{
+                    Toast.makeText(MainActivity.this,"Wrong Info",Toast.LENGTH_SHORT).show();
+                }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.nav_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,
-                        new ProfileFragment()).addToBackStack(null).commit();
-                break;
+            }
+        });
 
-        }
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerScreen = new Intent(MainActivity.this, RegistrationActivity.class);
+                startActivity(registerScreen);
+            }
+        });
     }
 }
