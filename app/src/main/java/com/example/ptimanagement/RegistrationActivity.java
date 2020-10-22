@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -41,6 +42,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 editor.commit();
                 editor.putString("email", newEmail);
                 editor.commit();
+                Toast.makeText(RegistrationActivity.this,"Registration Completed",Toast.LENGTH_SHORT).show();
             }
         });
     }

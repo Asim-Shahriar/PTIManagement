@@ -34,6 +34,7 @@ public class RecyclerViewFragment extends Fragment implements RecyclerViewClickI
                 new MyListData("Setting",R.drawable.ic_baseline_settings_24),
                 new MyListData("Website",R.drawable.about),
                 new MyListData("Gallery",R.drawable.gallery),
+                new MyListData("PDF Books",R.drawable.pdf),
 
         };
 
@@ -81,6 +82,10 @@ public class RecyclerViewFragment extends Fragment implements RecyclerViewClickI
         }
         if(position==10){
             getFragmentManager().beginTransaction().replace(R.id.frameContainer,new GalleryFragment())
+                    .addToBackStack(null).commit();
+        }
+        if(position==11){
+            getFragmentManager().beginTransaction().replace(R.id.frameContainer,new PdfFragment())
                     .addToBackStack(null).commit();
         }
     }
