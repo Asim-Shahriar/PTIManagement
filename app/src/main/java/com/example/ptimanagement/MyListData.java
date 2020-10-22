@@ -3,9 +3,11 @@ package com.example.ptimanagement;
 public class MyListData {
 
     private String description;
+    private int image;
 
-    public MyListData(String description) {
+    public MyListData(String description,int image) {
         this.description = description;
+        this.image=image;
 
     }
     public String getDescription() {
@@ -15,4 +17,11 @@ public class MyListData {
         this.description = description;
     }
 
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
 }

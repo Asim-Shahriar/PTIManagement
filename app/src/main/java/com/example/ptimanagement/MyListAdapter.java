@@ -3,6 +3,7 @@ package com.example.ptimanagement;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
 
         final MyListData myListData = listdata[position];
         holder.textView.setText(listdata[position].getDescription());
+        holder.imageView.setImageResource(listdata[position].getImage());
     }
 
     @Override
@@ -43,10 +45,12 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView textView;
+        public ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.text);
+            imageView=itemView.findViewById(R.id.imageView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

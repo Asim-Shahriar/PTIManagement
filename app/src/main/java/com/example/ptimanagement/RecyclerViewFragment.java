@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,24 +23,24 @@ public class RecyclerViewFragment extends Fragment implements RecyclerViewClickI
         View v= inflater.inflate(R.layout.fragment_recycler_view, container, false);
 
         MyListData[] myListData = new MyListData[] {
-                new MyListData("About us"),
-                new MyListData("Services"),
-                new MyListData("E-Services"),
-                new MyListData("Contact"),
-                new MyListData("Attendance"),
-                new MyListData("Result"),
-                new MyListData("Notice Board"),
-                new MyListData("Notifications"),
-                new MyListData("Setting"),
-                new MyListData("Website"),
-                new MyListData("Gallery"),
+                new MyListData("About us",R.drawable.about),
+                new MyListData("Services",R.drawable.services),
+                new MyListData("E-Services",R.drawable.services),
+                new MyListData("Contact",R.drawable.ic_baseline_contacts_24),
+                new MyListData("Attendance",R.drawable.attendance),
+                new MyListData("Result",R.drawable.results),
+                new MyListData("Notice Board",R.drawable.notice),
+                new MyListData("Notifications",R.drawable.ic_baseline_notifications_24),
+                new MyListData("Setting",R.drawable.ic_baseline_settings_24),
+                new MyListData("Website",R.drawable.about),
+                new MyListData("Gallery",R.drawable.gallery),
 
         };
 
         RecyclerView recyclerView = (RecyclerView)v. findViewById(R.id.recyclerView);
         MyListAdapter adapter = new MyListAdapter(myListData,this);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         recyclerView.setAdapter(adapter);
         return v;
     }
