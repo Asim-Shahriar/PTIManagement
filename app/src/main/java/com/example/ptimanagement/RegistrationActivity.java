@@ -35,9 +35,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 //stores 3 new instances of sharedprefs. Both the user and password's keys are the same as the input.
                 //Must be done this way because sharedprefs is stupid and inefficient. You cannot store Arrays easily
                 //so I use strings instead.
-                editor.putString("user",newUser);
+                editor.putString("user1",newUser);
                 editor.commit();
-                editor.putString("password", newPassword);
+                editor.putString("password1", newPassword);
                 editor.commit();
                 editor.putString("email", newEmail);
                 editor.commit();

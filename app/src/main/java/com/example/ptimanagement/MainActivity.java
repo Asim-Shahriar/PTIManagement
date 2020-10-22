@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 String password = etPassword.getText().toString();
                 SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
 
-                String savedPassword = preferences.getString(password, "");
-                String savedUserName = preferences.getString(user, "");
+                String savedPassword = preferences.getString("password1", "");
+                String savedUserName = preferences.getString("user1", "");
 
-                /*String userDetails = preferences.getString(user + password + "data","No information on that user.");
+               /* String userDetails = preferences.getString(user + password + "data","No information on that user.");
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("display",userDetails);
                 editor.commit();*/
